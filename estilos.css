@@ -41,32 +41,31 @@ section {
 }
 section#hola {
 
-  display: grid;
-  place-items: center;
+  .maquina-escribir {
+    font-size: xx-large;
+    display: block;
+    font-family: monospace;
+    white-space: nowrap; /* los espacios en blanco no rompen la línea */        
+    width: 20ch; /* el ancho será el número de caracteres que tiene nuestra línea */
+    animation: escribiendo 2s steps(20);          
+    overflow: hidden;
+  }
 
-p{
-  width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: 2rem;
-  margin: 0 auto;
-  font-family: "Courier New";
-  border-right: 0.15em solid #18bdec;
-  animation: typing 4s steps(38) 1s 1 normal both, blink 1s steps(1) infinite;
-}
-@keyframes typing {
-  from {
-    width: 0;
+  .cursor{
+    animation: 0.6s parpadeo-cursor infinite;
   }
-  to {
-    width: 100%;
+
+  @keyframes escribiendo {
+    from {
+      width: 0;
+    }
   }
-}
-@keyframes blink {
-  50% {
-    border-color: transparent;
+
+  @keyframes parpadeo-cursor {
+    50% {
+      opacity: 0;
+    }
   }
-}
 }
 
 section#about-me {
