@@ -8,7 +8,7 @@ section#hola {
   display: grid;
   place-items: center;
 
-p {
+p#h{
   width: 0;
   overflow: hidden;
   white-space: nowrap;
